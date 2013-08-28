@@ -26,8 +26,14 @@ class Player:
             self.hand.remove(card)
             deck.append(card)
    
-   
-   
+    def face_val(card):
+        if card[:-1] in ["q","k","j"]:
+           return int(10)
+        elif card[:-1] == "a":
+           return int(1)
+        elif int(card[:-1]) in range(2,11):
+           return int(card[:-1])
+          
     def hand_score(self,round_name,card_list, all_melds):
         round_name = round_name.lower()
         score = 0
